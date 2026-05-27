@@ -61,7 +61,7 @@ export default function Offerings() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {/* Service 1 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service1.title')}
             </h3>
@@ -71,7 +71,7 @@ export default function Offerings() {
           </div>
 
           {/* Service 2 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service2.title')}
             </h3>
@@ -81,7 +81,7 @@ export default function Offerings() {
           </div>
 
           {/* Service 3 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service3.title')}
             </h3>
@@ -91,7 +91,7 @@ export default function Offerings() {
           </div>
 
           {/* Service 4 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service4.title')}
             </h3>
@@ -101,7 +101,7 @@ export default function Offerings() {
           </div>
 
           {/* Service 5 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service5.title')}
             </h3>
@@ -111,7 +111,7 @@ export default function Offerings() {
           </div>
 
           {/* Service 6 */}
-          <div className="bg-[#0A0F1C]/50 backdrop-blur-sm border border-[#1E90FF]/10 rounded-xl p-5 hover:border-[#1E90FF]/30 transition-all hover:scale-[1.02]">
+          <div className="bg-[#0A0F1C]/100 backdrop-blur-sm border-1 border-[#1E90FF]/40 rounded-xl p-5 hover:border-[#1E90FF]/50 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all hover:scale-[1.02]">
             <h3 className="text-lg font-bold text-[#1E90FF] mb-2 glitch-text">
               {t('offerings.service6.title')}
             </h3>
@@ -132,7 +132,7 @@ export default function Offerings() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Hands-On Experience */}
-            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/5">
+            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
               <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
                 {t('offerings.datacenter.hands.title')}
               </h3>
@@ -147,7 +147,7 @@ export default function Offerings() {
             </div>
 
             {/* Process and Safety */}
-            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/5">
+            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
               <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
                 {t('offerings.datacenter.process.title')}
               </h3>
@@ -172,7 +172,7 @@ export default function Offerings() {
             <div className="w-20 h-1 bg-[#1E90FF] mx-auto rounded-full" />
           </div>
 
-          <div className="bg-[#0A0F1C]/30 rounded-xl p-6 border border-[#1E90FF]/5 max-w-3xl mx-auto">
+          <div className="bg-[#0A0F1C]/30 rounded-xl p-6 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all max-w-3xl mx-auto">
             <p className="text-[#E6F0FF]/70 text-center mb-4 text-sm">
               {t('offerings.enduser.subtitle')}
             </p>

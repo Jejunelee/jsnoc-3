@@ -20,7 +20,12 @@ const partners: Partner[] = [
   { id: 4, src: "/Partners/4.png", alt: "Partner 4", name: "Partner 4", size: "custom", customSize: { width: 160, height: 80 } },
   { id: 5, src: "/Partners/5.png", alt: "Partner 5", name: "Partner 5", size: "custom", customSize: { width: 200, height: 80 } },
   { id: 6, src: "/Partners/6.png", alt: "Partner 6", name: "Partner 6", size: "custom", customSize: { width: 180, height: 80 } },
+  { id: 7, src: "/Partners/7.png", alt: "Partner 7", name: "Partner 7", size: "custom", customSize: { width: 100, height: 80 } },
+  { id: 8, src: "/Partners/8.png", alt: "Partner 8", name: "Partner 8", size: "custom", customSize: { width: 100, height: 80 } },
 ];
+
+// Duplicate partners for seamless looping
+const loopingPartners = [...partners, ...partners, ...partners];
 
 // Size mappings
 const getLogoSize = (partner: Partner) => {
@@ -87,17 +92,44 @@ export default function PartnersSection() {
         </div>
 
         <div
-          className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 transition-all duration-1000 delay-300 ${
+          className={`transition-all duration-1000 delay-300 ${
             isVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-10 opacity-0"
           }`}
         >
-          {partners.map((partner) => (
-            <PartnerCard key={partner.id} partner={partner} />
-          ))}
+          <div className="relative w-full overflow-hidden">
+            {/* Gradient overlays for smooth edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#05080F] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#05080F] to-transparent z-10 pointer-events-none" />
+            
+            {/* Auto-looping marquee */}
+            <div className="animate-marquee flex gap-8 md:gap-12 py-4">
+              {loopingPartners.map((partner, index) => (
+                <PartnerCard key={`${partner.id}-${index}`} partner={partner} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+          width: max-content;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
@@ -107,7 +139,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
   const { width, height } = getLogoSize(partner);
 
   return (
-    <div className="group relative">
+    <div className="group relative flex-shrink-0">
       {/* Pure white card background */}
       <div className="absolute inset-0 bg-white rounded-2xl transition-all duration-300 group-hover:scale-105" />
       
@@ -115,7 +147,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
       <div className="absolute inset-0 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl" />
       
       {/* Card Content */}
-      <div className="relative flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl transition-all duration-300 min-h-[120px] md:min-h-[140px]">
+      <div className="relative flex flex-col items-center justify-center p-4 md:p-6 rounded-2xl transition-all duration-300 min-w-[140px] md:min-w-[160px]">
         {!imageError ? (
           <div 
             className="relative"
