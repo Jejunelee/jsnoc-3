@@ -21,8 +21,8 @@ const translations: Translations = {
 
   // ============ HERO SECTION ============
   'hero.title': { 
-    EN: 'Grow your business with us',
-    KR: '비즈니스와의 협력으로 성장하세요'
+    EN: 'Your Trusted Infrastructure Partner',
+    KR: 'Your Trusted Infrastructure Partner'
   },
   'hero.subtitle': { 
     EN: 'Global Standards. Local Presence',
