@@ -35,7 +35,8 @@ export default function Offerings() {
   // Get translated arrays
   const handsOnItems = tArray('offerings.datacenter.hands.items');
   const processItems = tArray('offerings.datacenter.process.items');
-  const endUserItems = tArray('offerings.enduser.items');
+  const decomItems = tArray('offerings.datacenter.decom.items');
+  const projectItems = tArray('offerings.datacenter.project.items');
 
   return (
     <section
@@ -131,7 +132,7 @@ export default function Offerings() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Hands-On Experience */}
+            {/* Infrastructure Deployment / Hands-On Experience */}
             <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
               <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
                 {t('offerings.datacenter.hands.title')}
@@ -146,7 +147,7 @@ export default function Offerings() {
               </ul>
             </div>
 
-            {/* Process and Safety */}
+            {/* Operational Standards / Process and Safety */}
             <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
               <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
                 {t('offerings.datacenter.process.title')}
@@ -161,28 +162,37 @@ export default function Offerings() {
               </ul>
             </div>
           </div>
-        </div>
 
-        {/* End-User Support */}
-        <div>
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#E6F0FF] mb-3 glitch-text">
-              {t('offerings.enduser.title')}
-            </h2>
-            <div className="w-20 h-1 bg-[#1E90FF] mx-auto rounded-full" />
-          </div>
+          {/* Second row of datacenter sections */}
+          <div className="grid md:grid-cols-2 gap-6 mt-6">
+            {/* Decommissioning & ITAD */}
+            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
+              <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
+                {t('offerings.datacenter.decom.title')}
+              </h3>
+              <ul className="space-y-1.5">
+                {decomItems.map((item, itemIdx) => (
+                  <li key={itemIdx} className="text-gray-300 flex items-start gap-2 text-sm">
+                    <span className="text-[#1E90FF] mt-0.5">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="bg-[#0A0F1C]/30 rounded-xl p-6 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all max-w-3xl mx-auto">
-            <p className="text-[#E6F0FF]/70 text-center mb-4 text-sm">
-              {t('offerings.enduser.subtitle')}
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {endUserItems.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-[#E6F0FF]/70 text-sm">
-                  <span className="text-[#1E90FF]">✓</span>
-                  <span>{item}</span>
-                </div>
-              ))}
+            {/* Nationwide Project Management */}
+            <div className="bg-[#0A0F1C]/30 rounded-xl p-5 border border-[#1E90FF]/20 hover:border-[#1E90FF]/40 hover:shadow-lg hover:shadow-[#1E90FF]/5 transition-all">
+              <h3 className="text-base font-semibold text-[#1E90FF] mb-3 glitch-text">
+                {t('offerings.datacenter.project.title')}
+              </h3>
+              <ul className="space-y-1.5">
+                {projectItems.map((item, itemIdx) => (
+                  <li key={itemIdx} className="text-gray-300 flex items-start gap-2 text-sm">
+                    <span className="text-[#1E90FF] mt-0.5">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

@@ -5,6 +5,8 @@ import Offerings from "@/app/components/Offerings";
 import Footer from "@/app/components/Footer";
 import Contact from "@/app/components/Contact";
 import Partners from "@/app/components/Partners";
+import WhyChooseJSNOC from "@/app/components/WhyChooseJSNOC";
+import SupportedIndustries from "@/app/components/SupportedIndustries";
 
 export default function Home() {
   return (
@@ -17,7 +19,9 @@ export default function Home() {
         <AboutUs />
       </div>
       <Partners />
+      <SupportedIndustries />
       <div id="services">
+                <WhyChooseJSNOC />
         <Offerings />
       </div>
       <div id="contact">
