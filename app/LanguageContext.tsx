@@ -37,7 +37,7 @@ const translations: Translations = {
   // ============ PARTNERS SECTION ============
   'partners.title': { 
     EN: 'Companies We\'ve Worked With', 
-    KR: '협력 회사' 
+    KR: '기업 고객사' 
   },
   'partners.subtitle': { 
     EN: 'Trusted by innovative companies worldwide', 
