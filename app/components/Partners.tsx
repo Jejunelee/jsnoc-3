@@ -22,6 +22,7 @@ const partners: Partner[] = [
   { id: 6, src: "/Partners/6.png", alt: "Partner 6", name: "Partner 6", size: "custom", customSize: { width: 180, height: 80 } },
   { id: 7, src: "/Partners/7.png", alt: "Partner 7", name: "Partner 7", size: "custom", customSize: { width: 100, height: 80 } },
   { id: 8, src: "/Partners/8.png", alt: "Partner 8", name: "Partner 8", size: "custom", customSize: { width: 100, height: 80 } },
+  { id: 9, src: "/Partners/9.png", alt: "Partner 9", name: "Partner 9", size: "custom", customSize: { width: 100, height: 80 } },
 ];
 
 // Duplicate partners for seamless looping
