@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LanguageProvider } from "@/app/LanguageContext";
 import "./globals.css";
@@ -32,6 +33,12 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+
+        <Script
+          src="https://app.jenafy.com/tracker.js"
+          strategy="afterInteractive"
+          data-site-id="jn_70fc99cf2bee4999"
+        />
       </body>
     </html>
   );
