@@ -11,6 +11,7 @@ interface Partner {
   name: string;
   size?: "small" | "medium" | "large" | "custom";
   customSize?: { width: number; height: number };
+  offsetY?: number;
 }
 
 const partners: Partner[] = [
@@ -23,6 +24,8 @@ const partners: Partner[] = [
   { id: 7, src: "/Partners/7.png", alt: "Partner 7", name: "Partner 7", size: "custom", customSize: { width: 100, height: 80 } },
   { id: 8, src: "/Partners/8.png", alt: "Partner 8", name: "Partner 8", size: "custom", customSize: { width: 100, height: 80 } },
   { id: 9, src: "/Partners/9.png", alt: "Partner 9", name: "Partner 9", size: "custom", customSize: { width: 100, height: 80 } },
+  { id: 10, src: "/Partners/10.png", alt: "Layer1 IT Solutions", name: "Layer1 IT Solutions", size: "custom", customSize: { width: 210, height: 80 } },
+  { id: 11, src: "/Partners/11.png", alt: "TS Plus", name: "TS Plus", size: "custom", customSize: { width: 240, height: 48 }, offsetY: 8 },
 ];
 
 // Duplicate partners for seamless looping
@@ -124,7 +127,7 @@ export default function PartnersSection() {
           }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 37s linear infinite;
           width: max-content;
         }
         .animate-marquee:hover {
@@ -140,7 +143,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
   const { width, height } = getLogoSize(partner);
 
   return (
-    <div className="group relative flex-shrink-0">
+    <div className="group relative flex flex-shrink-0 self-stretch">
       {/* Pure white card background */}
       <div className="absolute inset-0 bg-white rounded-2xl transition-all duration-300 group-hover:scale-105" />
       
@@ -148,11 +151,15 @@ function PartnerCard({ partner }: { partner: Partner }) {
       <div className="absolute inset-0 rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl" />
       
       {/* Card Content */}
-      <div className="relative flex flex-col items-center justify-center p-4 md:p-6 rounded-2xl transition-all duration-300 min-w-[140px] md:min-w-[160px]">
+      <div className="relative flex flex-1 flex-col items-center justify-center p-4 md:p-6 rounded-2xl transition-all duration-300 min-w-[140px] md:min-w-[160px]">
         {!imageError ? (
           <div 
             className="relative"
-            style={{ width: `${width}px`, height: `${height}px` }}
+            style={{
+              width: `${width}px`,
+              height: `${height}px`,
+              transform: partner.offsetY ? `translateY(${partner.offsetY}px)` : undefined,
+            }}
           >
             <Image
               src={partner.src}
