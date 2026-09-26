@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with your API key
-const resend = new Resend('re_PJeQ3Qzd_LcEVHr8Cp64iowvkr9QAg9S4');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -102,10 +101,18 @@ export async function POST(request: Request) {
       </html>
     `;
 
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      );
+    }
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'JS Network Operations <noreply@jsnoc.com>', // You can change this to your verified domain
-      to: ['admin@jsnoc.com'], // Your company email
+      to: ['inquiry@jsnoc.com'], // Your company email
       replyTo: email,
       subject: `New Contact Form Submission from ${name}${company ? ` (${company})` : ''}`,
       text: emailContent,
