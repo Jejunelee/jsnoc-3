@@ -26,6 +26,8 @@ const partners: Partner[] = [
   { id: 9, src: "/Partners/9.png", alt: "Partner 9", name: "Partner 9", size: "custom", customSize: { width: 100, height: 80 } },
   { id: 10, src: "/Partners/10.png", alt: "Layer1 IT Solutions", name: "Layer1 IT Solutions", size: "custom", customSize: { width: 210, height: 80 } },
   { id: 11, src: "/Partners/11.png", alt: "TS Plus", name: "TS Plus", size: "custom", customSize: { width: 240, height: 48 }, offsetY: 8 },
+  { id: 12, src: "/Partners/12.png", alt: "Blue", name: "Blue", size: "custom", customSize: { width: 110, height: 80 } },
+  { id: 13, src: "/Partners/13.png", alt: "Starlink", name: "Starlink", size: "custom", customSize: { width: 170, height: 84 } },
 ];
 
 // Duplicate partners for seamless looping
@@ -127,7 +129,7 @@ export default function PartnersSection() {
           }
         }
         .animate-marquee {
-          animation: marquee 37s linear infinite;
+          animation: marquee 43s linear infinite;
           width: max-content;
         }
         .animate-marquee:hover {
